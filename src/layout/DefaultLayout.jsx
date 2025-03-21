@@ -1,15 +1,19 @@
 import Header from "./../components/Header/index.jsx";
+import {Outlet} from "react-router-dom";
+import MainPage from "../pages/MainPage/index.jsx";
 
 const DefaultLayout = () => {
 
     return (
-        <>
-            <Header
-                title='Пропс title переданный из default layout'
-                subTitle='Пропс subtitle переданный из default layout'
-                onClick='Клик по кнопке'
-            />
-        </>
+        <div className="default-layout">
+            <Header />
+            <div className="container">
+                <Outlet/>
+                <footer className="footer">
+                    <p>&copy; All right reserved</p>
+                </footer>
+            </div>
+        </div>
     )
 }
 export default DefaultLayout
